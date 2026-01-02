@@ -1,0 +1,123 @@
+/* App.css - Perfectly Centered One-Page Weather App */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;     /* ← Vertical center */
+  justify-content: center; /* ← Horizontal center */
+  padding: 20px;
+}
+
+/* Main container - holds both search + result */
+.container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;               /* Space between search box and result card */
+  text-align: center;
+}
+
+/* Search Section */
+.search-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 32px 24px;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+.search-section h2 {
+  color: #2c3e50;
+  margin-bottom: 24px;
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.search-section .MuiTextField-root {
+  width: 100%;
+  max-width: 340px;
+}
+
+.search-section .MuiButton-root {
+  margin-top: 24px;
+  background-color: #3498db;
+  color: white;
+  padding: 13px 44px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-transform: none;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.search-section .MuiButton-root:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Result Card */
+.info-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.info-card .MuiCardMedia-root {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.info-card .MuiCardContent-root {
+  padding: 26px;
+}
+
+.info-card .MuiTypography-h5 {
+  color: #2c3e50;
+  margin-bottom: 18px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.info-card p {
+  margin: 11px 0;
+  color: #34495e;
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+
+.info-card b {
+  color: #3498db;
+  font-weight: 600;
+}
+
+/* Mobile friendly */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    gap: 24px;
+  }
+  .search-section h2 {
+    font-size: 1.7rem;
+  }
+  .info-card .MuiTypography-h5 {
+    font-size: 1.5rem;
+  }
+}
